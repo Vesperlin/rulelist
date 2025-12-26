@@ -2,8 +2,10 @@
 
 ---
 
-'''
+
 仓库结构
+
+```text
 vesper-rule-compiler/
 ├── source/
 │   ├── rules.rsl                # 规则源（你只写这个）
@@ -35,5 +37,5 @@ vesper-rule-compiler/
 │   └── build.yml
 │
 └── README.md
-'''
+```
 
