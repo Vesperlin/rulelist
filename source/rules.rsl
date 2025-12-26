@@ -1,0 +1,36 @@
+# =========================
+# Ads
+# =========================
+DOMAIN-SUFFIX,doubleclick.net -> REJECT
+DOMAIN-SUFFIX,ads.example.com -> REJECT-IMG
+
+# =========================
+# AI
+# =========================
+OR(
+  DOMAIN-KEYWORD,openai,
+  DOMAIN-KEYWORD,chatgpt
+) -> PROXY:US-RES
+
+# =========================
+# Apple CN
+# =========================
+AND(
+  DOMAIN-SUFFIX,icloud.com.cn,
+  GEOIP,CN
+) -> DIRECT
+
+# =========================
+# China Mobile
+# =========================
+DOMAIN-SET,cn_domains -> DIRECT
+
+# =========================
+# Block Tracking
+# =========================
+URL-REGEX,.*tracking.* -> REJECT-DROP
+
+# =========================
+# Fallback
+# =========================
+FINAL -> PROXY
