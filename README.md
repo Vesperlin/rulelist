@@ -1,14 +1,12 @@
 # rulelist
 
----
-
 
 仓库结构
 
 ```text
-vesper-rule-compiler/
+rulelist/
 ├── source/
-│   ├── rules.rsl                # 规则源（你只写这个）
+│   ├── rules.rsl                # 规则源
 │   └── sets/
 │       ├── cn_domains.set       # DOMAIN-SET 示例
 │       └── ads_domains.set
