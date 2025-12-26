@@ -5,35 +5,38 @@
 
 ```text
 rulelist/
-├── source/
-│   ├── rules.rsl                # 规则源
-│   └── sets/
-│       ├── cn_domains.set       # DOMAIN-SET 示例
-│       └── ads_domains.set
+├── rules/                         # 规则源
+│   ├── DIRECT.list                # 直连 DIRECT
+│   ├── PROXY.list                 # 代理 PROXY
+│   ├── REJECT.list                # REJECT / BLOCT
+│   ├── PROXY_US.list              # 指定 US 节点
+│   ├── PROXY_HK.list              # 指定 HK 节点
+│   └── FINAL.list                 # FINAL
 │
-├── compiler/
-│   ├── lexer.py                 # 词法解析
-│   ├── parser.py                # AST 构建（AND/OR/NOT）
-│   ├── ast.py                   # AST 数据结构
-│   ├── validator.py             # 校验 / 能力检测
-│   ├── backends/
-│   │   ├── surge.py             # Surge / SR / Loon / Stash
-│   │   ├── quantumultx.py
-│   │   ├── clash.py
-│   │   ├── singbox.py
-│   │   └── v2rayn.py
-│   └── compile.py               # 编译入口
+├── dsl/                           # DSL 解析层
+│   ├── grammar.md                 # 规则语言规范
+│   ├── ast.py                     # AST 结构定义
+│   └── parser.py                  # DSL → AST
 │
-├── dist/
+├── compiler/                      # 编译后端（按客户端）
+│   ├── base.py                    # 通用降级 / capability
+│   ├── surge.py
+│   ├── quantumultx.py
+│   ├── clash.py
+│   ├── singbox.py
+│   └── v2rayn.py
+│
+├── dist/                          # raw
 │   ├── surge.conf
+│   ├── loon.conf
+│   ├── stash.conf
 │   ├── quantumultx.conf
 │   ├── clash.yaml
 │   ├── sing-box.json
 │   └── v2rayn.json
 │
-├── .github/workflows/
-│   └── build.yml
-│
+├── build.py                       # 构建入口
+├── capabilities.json              # 各客户端支持能力声明
 └── README.md
 ```
 
