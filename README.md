@@ -1,14 +1,15 @@
 # rulelist
 
 ### GitHub Raw 导入方式
-•Surge/Loon/Stash
+
+###### Surge/Loon/Stash
     直接订阅 dist/.conf 或 rules/.list
-•Clash/mihomo
+###### Clash/mihomo
     使用 dist/clash.yaml
-•sing-box
+###### sing-box
     方法一：导入 dist/sing-box.json
     方法二：把里面 route.rules 合并进你现有 config
-•v2rayN
+###### v2rayN
     方法一：导入 dist/v2rayn.json
     方法二：把 routing.rules 合并
 
