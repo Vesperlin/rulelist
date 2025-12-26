@@ -1,5 +1,20 @@
 # rulelist
 
+### GitHub Raw 导入方式
+	•	**Surge/Loon/Stash**：直接订阅 dist/.conf 或 rules/.list
+	•	**Clash/mihomo**：使用 dist/clash.yaml
+	•	**sing-box**：
+          方法一：导入 dist/sing-box.json
+          方法二：把里面 route.rules 合并进你现有 config
+	•	**v2rayN**：
+          方法一：导入 dist/v2rayn.json
+          方法二：把 routing.rules 合并
+
+
+### 生成 dist
+
+```bash
+python3 build.py --base-raw-url "https://raw.githubusercontent.com/<user>/<repo>/main/rulelist"
 
 ### 仓库结构
 
@@ -41,12 +56,6 @@ rulelist/
 ```
 
 
-1. 维护“按策略分类”的规则源（rules/*.list）
-2. 用 build.py 编译出多端可导入配置（dist/*）。
 
 
-#### 生成 dist
-
-```bash
-python3 build.py --base-raw-url "https://raw.githubusercontent.com/<user>/<repo>/main/rulelist"
 
