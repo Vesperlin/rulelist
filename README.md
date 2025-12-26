@@ -18,6 +18,7 @@
 
 ```bash
 python3 build.py --base-raw-url "https://raw.githubusercontent.com/<user>/<repo>/main/rulelist"
+```
 
 ### 仓库结构
 
