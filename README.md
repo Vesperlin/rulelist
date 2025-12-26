@@ -1,7 +1,7 @@
 # rulelist
 
 
-仓库结构
+### 仓库结构
 
 ```text
 rulelist/
@@ -39,4 +39,14 @@ rulelist/
 ├── capabilities.json              # 各客户端支持能力声明
 └── README.md
 ```
+
+
+1. 维护“按策略分类”的规则源（rules/*.list）
+2. 用 build.py 编译出多端可导入配置（dist/*）。
+
+
+#### 生成 dist
+
+```bash
+python3 build.py --base-raw-url "https://raw.githubusercontent.com/<user>/<repo>/main/rulelist"
 
